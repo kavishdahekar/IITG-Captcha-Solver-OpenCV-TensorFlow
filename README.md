@@ -52,7 +52,7 @@ Following is the result of applying a single iteration of erode followed by dila
 ![sample erode and dilate](readme_files/img/sample_erode_dilate.png)
 
 #### Segmentation : Extracting individual characters
-Luckily, the captcha always has exactly 5 characters (alphabets always capital) which helps us make some initial assumptions about the segmentation. As an initial test, I counted the number of white pixels in the image per column and plotted the same on a graph where X axis denotes the column in the image and X axis denotes the number of white pixels in that column.
+Luckily, the captcha always has exactly 5 characters (alphabets always capital) which helps us make some initial assumptions about the segmentation. As an initial test, I counted the number of white pixels in the image per column and plotted the same on a graph where X axis denotes the column in the image and Y axis denotes the number of white pixels in that column.
 Below is the graph mentioned above for sample image:
 
 ![sample plot](readme_files/img/sample_plot.png)
