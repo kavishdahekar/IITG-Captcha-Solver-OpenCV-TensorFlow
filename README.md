@@ -4,7 +4,7 @@ Cracking IITG's webmail captcha using a simple Feed Forward Neural Network
 ##Introduction
 This project tries to train a supervised model that can crack IIT Guwahati's webmail captcha system.
 Below is a sample captcha image:
-![sample captcha](https://webmail.iitg.ernet.in/plugins/captcha/backends/watercap/image_generator.php?sq=1474639923)
+![sample captcha](sample.png)
 
 Preliminary result using a basic FFNN (Softmax Regression + Cross Entropy) with 12000 training inputs and 3000 testing inputs gives an **accuracy of about 95%**. Similar NNets with one or more hidden layers could perform significantly better.
 
@@ -23,23 +23,23 @@ As can be seen from the sample, the captcha tries to obfuscate its contents by a
 First course of action was to clear the noise from the image in order to make segmentation of the image into characters much easier. The image was first converted to grayscale and a threshold applied so that the resultant image only has black or white pixels. Some internet research and test runs showed that **medianBlur** did a good job of getting rid of the random pixels in the image.
 
 Following is sample output of image after thresholding.
-<img>
+![sample thresholded](sample_thresh.png)
 Following is sample output of image after applying medianBlur.
-<img>
+![sample medianBlur](sample_medianblur.png)
 
 To make the final result even more clean, a round of erode and dilate was applied.
 Following is the result of applying a single iteration of erode followed by dilate using a 2x2 kernel.
-<img>
+![sample erode and dilate](sample_erode_dilate.png)
 
 #### Segmentation : Extracting individual characters
 Luckily, the captcha always has exactly 5 characters (alphabets always capital) which helps us make some initial assumptions about the segmentation. As an initial test, I counted the number of white pixels in the image per column and plotted the same on a graph where X axis denotes the column in the image and X axis denotes the number of white pixels in that column.
 Below is the graph mentioned above for sample image:
-<img>
+![sample plot](sample_plot.png)
 
-It was clear upon visible inspection that a simple clustering algorithm will be able to efficiently group the characters into individual clusters. I transformed the output of the previous medianBlur operation into a binary matrix of the same size as that of the image where 0 denotes a black pixel and 1 denotes a white pixel. Then I applied k-means with K=5 for all (i,j) pairs of the matrix where the value was 1 (i.e white pixels). The results were positive with almost all characters always being segmented into individual clusters.
+It was clear upon visible inspection that a simple clustering algorithm should be able to effectively group the characters into individual clusters. I transformed the output of the previous medianBlur operation into a binary matrix of the same size as that of the image where 0 denotes a black pixel and 1 denotes a white pixel. Then I applied k-means with K=5 for all (i,j) pairs of the matrix where the value was 1 (i.e white pixels). The results were positive with almost all characters always being segmented into individual clusters.
 
 Below is a color coded result of the clusters identified by k-means. White vertical bar drawn at x co-ordinate of center of the respective cluster.
-<img>
+![sample kmeans](sample_kmeans.png)
 
 Once the character's pixels were identified, a bounding box of 65x45 pixels was defined around the center of its cluster and the character was extracted form the captcha. These 65x45 sized images formed the basis of the training and testing of the model.
 
@@ -47,7 +47,7 @@ Once the character's pixels were identified, a bounding box of 65x45 pixels was 
 It was imperative that a large amount of training data will be required for properly training the the model (supervised) and hence I setup a php page that displays random captchas and allows the user to enter its result in a text box. The image and the results were then stored in a systematic form.
 
 Below is a screenshot of the data-collection php page.
-<img>
+![sample data collection page](data_collection_php.png)
 
 Following are the statistics of the total data collected in over two days:
 | .. | ..  |   |   |
