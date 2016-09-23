@@ -44,7 +44,7 @@ Below is a color coded result of the clusters identified by k-means. White verti
 Once the character's pixels were identified, a bounding box of 65x45 pixels was defined around the center of its cluster and the character was extracted form the captcha. These 65x45 sized images formed the basis of the training and testing of the model.
 
 ### Data Collection
-It was imperative that a large amount of training data will be required for properly training the the model (supervised) and hence I setup a php page that displays random captchas and allows the user to enter its result in a text box. The image and the results were then stored in a systematic form.
+It was imperative that a large amount of training data will be required for properly training the model (supervised) and hence I setup a php page that displays random captchas and allows the user to enter its result in a text box. The image and the results were then stored in a systematic form.
 
 Below is a screenshot of the data-collection php page.
 ![sample data collection page](readme_files/img/data_collection_php.png)
