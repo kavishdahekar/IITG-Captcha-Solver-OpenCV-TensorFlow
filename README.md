@@ -60,13 +60,15 @@ Below is a screenshot of the data-collection php page.
 
 
 Following are the statistics of the total data collected in over two days:
-| .. | ..  |   |   |
-|--------------------------|-------|---|---|
-| Total Captchas Collected | 3016  |   |   |
-| Total Charactes Collected (5 per captcha)| 15080 |   |   |
+
+| .. | ..  |
+|--------------------------|-------|
+| Total Captchas Collected | 3016  |
+| Total Charactes Collected (5 per captcha)| 15080 |
 
 _
 Following are character wise statistics of data collected.
+
 | .. | ..  | ..  | ..  |
 |--------------------------|-------|---|---|
 |	2	|	559	|	g	|	578	|
