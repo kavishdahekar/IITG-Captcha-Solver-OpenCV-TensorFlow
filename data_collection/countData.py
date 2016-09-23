@@ -1,3 +1,10 @@
+# *******************************
+# File 		: countData.py
+# Author 	: Kavish N. Dahekar
+# Email 	: kavishdahekar@gmail.com
+# Details 	: script to count and analyse amount of data collected
+# *******************************
+
 import os
 
 # get files from directory

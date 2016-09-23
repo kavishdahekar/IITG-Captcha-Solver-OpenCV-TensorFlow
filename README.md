@@ -1,5 +1,19 @@
-# IITG-Captcha-Cracker-OpenCV-TensorFlow
+# IITG-Captcha-Solver-OpenCV-TensorFlow
 Cracking IITG's webmail captcha using a simple Feed Forward Neural Network
+
+##Script in action
+
+![sample output](readme_files/img/sample_output.png)
+
+##Dependencies
+
+ 1. Python 3.5
+ 2. OpenCV 3
+ 3. Tensorflow (preferably with Cuda Toolkit 7.5 and cuDNN v5)
+
+You can completely recreate my conda environment using the environment config file conda_env_pyopencv.yml
+
+You can recreate the environment like this : `conda env create -f conda_env_pyopencv.yml`
 
 ##Introduction
 This project tries to train a supervised model that can crack IIT Guwahati's webmail captcha system.

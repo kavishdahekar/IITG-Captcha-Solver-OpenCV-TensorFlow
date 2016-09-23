@@ -1,8 +1,9 @@
 <?php
 // *******************************
-// File : dataCollect.php
-// Author : Kavish N. Dahekar
-// Email : kavishdahekar@gmail.com
+// File 	: dataCollect.php
+// Author 	: Kavish N. Dahekar
+// Email 	: kavishdahekar@gmail.com
+// Details 	: Script for collection and quick annotation of training examples of captchas
 // *******************************
 
 
