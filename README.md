@@ -89,13 +89,14 @@ Following are character wise statistics of data collected.
 ### Defining the Neural Network
 As a preliminary effort, I designed a simple FFNNet without any hidden layers. These steps were followed from the MNIST sample of the tensorFlow documentation.
 
-Each input image was to be input entirely in the neural net. Hence the total neurons required in the input layer were 64*45 = 2925.
+Each input image was to be input entirely in the neural net. Hence the total neurons required in the input layer were `64*45 = 2925`.
 Upon observation of the collected data, it was found that not all characters and numbers from the English alphabet were being used in the captchas. In all only 28 different characters and numbers appeared in the captcha. Hence the output layer of the NNet was created with 28 neurons.
-Weights were to be learned for each pixel and each output class, hence a weight matrix of size 2925x28 was required along with a bias matrix of 28x1.
-The output **y** would be a 28x1 matrix where each row is mapped to one of the 28 expected characters in the captcha. The y vector would ideally contain 1 for the correct output character and 0 for all others. For actual outputs, we pass them through a softmax layer to convert the output into a probability distribution and the choose the most probable output.
+Weights were to be learned for each pixel and each output class, hence a weight matrix of size `2925x28` was required along with a bias matrix of `28x1`.
+The output **y** would be a `28x1` matrix where each row is mapped to one of the 28 expected characters in the captcha. The y vector would ideally contain 1 for the correct output character and 0 for all others. For actual outputs, we pass them through a softmax layer to convert the output into a probability distribution and the choose the most probable output.
 
 Overall the forward step would look something like this:
-y = Wx + b
+
+`y = Wx + b`
 
 Error function was defined using the cross-entropy measure.
 
@@ -103,11 +104,11 @@ Gradient Descent with a learning rate of 0.5 was used for back-propogation.
 
 ### Training the Neural Net
 From the 15000 collected individual characters, 12000 random characters were used for training the NNet.
-Each character image was converted into a 2925x1 vector and its expected output into a 28x1 vector. Tensor flow automates the back-propogation step hence the only effort required was of selecting random batches of 100 from the 12000 inputs and repeating the training step for 1000 iterations.
+Each character image was converted into a `2925x1` vector and its expected output into a `28x1` vector. Tensor flow automates the back-propogation step hence the only effort required was of selecting random batches of 100 from the 12000 inputs and repeating the training step for 1000 iterations.
 The result was a trained Weight and Bias matrix which tensorFlow allowed to be stored to a file for later recovery.
 **Note:** I also installed the CUDA libraries which worked well with tensorFlow significantly reducing the training time. My graphics card is a NVidia GTX-950m.
 
-### Testing the Neural Net
+### Results : Testing the Neural Net
 The remaining 3000 characters from the collected data were used for testing the trained model. The accuracy was observed to be about 95%, quite good for a basic model, but can be certainly improved further.
 
 ### Sample Output for Webmail Captcha
