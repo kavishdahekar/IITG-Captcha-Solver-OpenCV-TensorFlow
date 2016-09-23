@@ -70,7 +70,7 @@ It was imperative that a large amount of training data will be required for prop
 
 Below is a screenshot of the data-collection php page.
 
-![sample data collection page](readme_files/img/data_collection_php.png)
+![sample data collection page](readme_files/img/data_collection_php_2.png)
 
 
 Following are the statistics of the total data collected in over two days:
