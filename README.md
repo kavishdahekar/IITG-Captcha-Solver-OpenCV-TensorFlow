@@ -37,11 +37,11 @@ As can be seen from the sample, the captcha tries to obfuscate its contents by a
 #### Removing noise from image
 First course of action was to clear the noise from the image in order to make segmentation of the image into characters much easier. The image was first converted to grayscale and a threshold applied so that the resultant image only has black or white pixels. Some internet research and test runs showed that **medianBlur** did a good job of getting rid of the random pixels in the image.
 
-Following is sample output of image after thresholding.
+Following is a sample output of image after thresholding.
 
 ![sample thresholded](readme_files/img/sample_thresh.png)
 
-Following is sample output of image after applying medianBlur.
+Following is a sample output of image after applying medianBlur.
 
 ![sample medianBlur](readme_files/img/sample_medianblur.png)
 
