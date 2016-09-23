@@ -1,5 +1,5 @@
 # IITG-Captcha-Solver-OpenCV-TensorFlow
-Cracking IITG's webmail captcha using a simple Feed Forward Neural Network
+Solving IITG's webmail captcha using a simple Feed Forward Neural Network
 
 ##Script in action
 
