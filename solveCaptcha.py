@@ -1,5 +1,5 @@
 # *******************************
-# File      : train_tensorFlow.py
+# File      : solveCaptcha.py
 # Author    : Kavish N. Dahekar
 # Email     : kavishdahekar@gmail.com
 # Details   : Using model for predicting captcha text
