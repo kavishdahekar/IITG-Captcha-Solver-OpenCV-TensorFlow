@@ -130,4 +130,4 @@ Below is a screenshot of the result of the model when given a sample webmail cap
 
 ### Shortcomings
 The model tends to fail in recognizing the difference between 2's and z's. Although the number of 2's and z's collected during data collection were equal, it could be the case that the random samples chosen for training the NNet had more z's than 2's thus causing the biased output.
-Creating a deeper NNet does seem to promise higher accuracy. However I have no intuitive of mathematical explanation for it. Adding a hidden layer to improve accuracy will be the future goal of this project. Any contributions/PRs are welcome as long as they are first discussed with me in detail.
+Creating a deeper NNet does seem to promise higher accuracy. However I have no intuitive or mathematical explanation for it. Adding a hidden layer to improve accuracy will be the future goal of this project. Any contributions/PRs are welcome as long as they are first discussed with me in detail.
